@@ -1,3 +1,7 @@
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+
 n_list=[4,8,16,32,64,128]
 h_list_error_trapezoid=[]
 integration_list_trapezoid=[]
