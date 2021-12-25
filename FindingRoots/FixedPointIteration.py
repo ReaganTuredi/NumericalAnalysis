@@ -26,3 +26,28 @@ temp_list_1
 
 
 ## This method is not good! The purpose of this module is to show in inefficiency of this method. 
+
+
+#------------------------------------------------
+#Error calculation
+
+def fixed_point_error(g,a,iterations):
+    x_0 = a
+    temp_list=[]
+    for val in range(iterations):
+        next_x = g(x_0)
+        x_0 = next_x
+        temp_list.append(next_x)
+    return temp_list
+
+fp_error_list=[]   
+fp_error_list.append(fixed_point_error(g,4,6))
+fp_error_list=fp_error_list[0]
+
+p_0_fp=[]
+p_1_fp=[]
+p_2_fp=[]
+for i in range(0,5):
+    p_0_fp.append((error(fp_error_list[i+1],fp_error_list[i],3.1618,0)))
+    p_1_fp.append((error(fp_error_list[i+1],fp_error_list[i],3.1618,1)))
+    p_2_fp.append((error(fp_error_list[i+1],fp_error_list[i],3.1618,2)))
